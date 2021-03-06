@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="sharedViewModelData"
+            type="com.example.noteapp.viewmodels.SharedViewModel" />
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_notetitle"
+            android:layout_width="300dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/note_title"
+            android:text="@={sharedViewModelData.noteTitle}"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_quantity"
+            android:layout_width="300dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/write_note"
+            android:layout_height="wrap_content"
+            android:text="@={sharedViewModelData.note}"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/bt_createnew"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/create_new_note"
+        android:layout_alignParentBottom="true"
+        />
+    <ProgressBar
+        android:id="@+id/progresbar"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
+
+</layout>
